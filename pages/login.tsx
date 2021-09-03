@@ -3,13 +3,18 @@ import { Auth } from "@supabase/ui";
 
 export default function Home() {
   const { user } = Auth.useUser();
+  console.log(user);
 
   return (
-    <Auth
-      supabaseClient={supabase}
-      providers={["google", "github"]}
-      socialLayout="horizontal"
-      socialButtonSize="xlarge"
-    />
+    <>
+      {!user && (
+        <Auth
+          supabaseClient={supabase}
+          providers={["google", "github"]}
+          socialLayout="horizontal"
+          socialButtonSize="xlarge"
+        />
+      )}
+    </>
   );
 }
