@@ -14,6 +14,7 @@ const fetcher = (url, token) =>
 
 const Login = () => {
   const { user, session } = useUser();
+  console.log({ user });
   const { data, error } = useSWR(
     session ? ["/api/getUser", session.access_token] : null,
     fetcher

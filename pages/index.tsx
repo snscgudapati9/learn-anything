@@ -1,22 +1,9 @@
 import Head from "next/head";
-import Navbar from "../components/navbar";
 import styles from "../styles/Home.module.css";
 
-import { useRouter } from "next/router";
-
 export default function Home() {
-  const router = useRouter();
-
   return (
     <div className={styles.container}>
-      <Head>
-        <title>Learn Anything</title>
-        <meta name="description" content="Save your links/notes." />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <Navbar route={router.route} />
-
       <main className={styles.main}>
         <h1 className={styles.title}>Learn Anything</h1>
         <h2 className="text-xl">Save your links/notes.</h2>
