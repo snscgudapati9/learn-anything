@@ -1,5 +1,21 @@
 import React, { useEffect, useState } from "react";
 
+import { supabase } from "../lib/initSupabase";
+
+function SignOutButton() {
+  return (
+    <button
+      className="btn-black w-full mt-12"
+      onClick={async () => {
+        const { error } = await supabase.auth.signOut();
+        if (error) console.log("Error logging out:", error.message);
+      }}
+    >
+      Logout
+    </button>
+  );
+}
+
 function Auth(props) {
   const { supabaseClient, authView, setAuthView } = props;
 
@@ -14,10 +30,18 @@ function Auth(props) {
     setError("");
     setLoading(true);
 
-    const { error: signInError } = await supabaseClient.auth.signIn({
+    const signInDetails = await supabaseClient.auth.signIn({
       email,
       password,
     });
+
+    const signInError = signInDetails.error;
+    const signInUser = signInDetails.user;
+
+    // const { error: signInError } = await supabaseClient.auth.signIn({
+    //   email,
+    //   password,
+    // });
     if (signInError) setError(signInError.message);
 
     setLoading(false);

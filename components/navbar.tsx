@@ -32,7 +32,7 @@ export default function Navbar() {
             href="/login"
             className="text-lg no-underline text-grey-darkest hover:text-blue-dark ml-2"
           >
-            Login / Register
+            Login / Sign Up
           </a>
         )}
       </div>
