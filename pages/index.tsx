@@ -1,5 +1,6 @@
-import { Auth } from "@supabase/ui";
+import { Auth, Button } from "@supabase/ui";
 import Link from "next/link";
+import { supabase } from "../lib/initSupabase";
 
 export default function Home() {
   const { user } = Auth.useUser();
@@ -19,7 +20,12 @@ export default function Home() {
           </h2>
         </div>
       ) : (
-        <div>Hello, you are logged in!</div>
+        <div>
+          <span>Signed in: {user.email}</span>
+          <Button block onClick={() => supabase.auth.signOut()}>
+            Sign out
+          </Button>
+        </div>
       )}
     </div>
   );

@@ -1,9 +1,22 @@
-import { supabase } from "../lib/initSupabase";
 import { Auth } from "@supabase/ui";
+import { supabase } from "../lib/initSupabase";
 
-export default function Home() {
+import { useRouter } from "next/router";
+import { useEffect } from "react";
+
+export default function Login() {
   const { user } = Auth.useUser();
-  console.log(user);
+
+  const router = useRouter();
+
+  useEffect(() => {
+    console.log({ user });
+    if (user) {
+      router.push({
+        pathname: "/",
+      });
+    }
+  }, []);
 
   return (
     <>

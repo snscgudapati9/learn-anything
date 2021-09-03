@@ -1,13 +1,12 @@
+import { Auth } from "@supabase/ui";
 import type { AppProps } from "next/app";
-import { UserContextProvider } from "../hooks/authUser";
-import { supabase } from "../lib/initSupabase";
 import Error from "next/error";
-
-import "../styles/globals.css";
-import "tailwindcss/tailwind.css";
-import React from "react";
 import Head from "next/head";
+import React from "react";
+import "tailwindcss/tailwind.css";
 import Layout from "../components/layout";
+import { supabase } from "../lib/initSupabase";
+import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
   if (pageProps.error) {
@@ -26,9 +25,9 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Head>
 
       <Layout>
-        <UserContextProvider supabaseClient={supabase}>
+        <Auth.UserContextProvider supabaseClient={supabase}>
           <Component {...pageProps} />
-        </UserContextProvider>
+        </Auth.UserContextProvider>
       </Layout>
     </>
   );
