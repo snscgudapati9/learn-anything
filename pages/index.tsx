@@ -14,7 +14,7 @@ export default function Home() {
             You can save and search all your notes and links with this tool.
             Have to
             <Link href="/login">
-              <a>login/signup</a>
+              <a className="inline"> Login / Sign Up </a>
             </Link>
             first!
           </h2>
