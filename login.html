@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login Page</title>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+	<link rel="stylesheet" type="text/css" href="loginc.css">
+</head>
+<body background-image=url("background.png")>
+  <div class="smooth login" id="login">
+  	<h2 class="login_header header"><i>Welcome back to the crazy page</i></h2>
+  	<p class="login_byline"><i>It's good to see u again</i></p>
+  	<div class="social-media_container">
+      <a href=""><i class="fab fa-facebook-square" style="color: #48556D;"></i></a>
+  		<a href=""></a><i class="fab fa-instagram" style="color: #48556D;"></i></a>
+  		<a href=""><i class="fab fa-twitter" style="color: #48556D;"></i></a>
+  		<a href=""><i class="fab fa-linkedin-in" style="color: #48556D;"></i></a>	
+      <a href=""><i class="fab fa-google-plus-square" style="color: #48556D;"></i></a>
+  	</div>
+  	<fieldset class="form">
+  		<legend class="form_legend"><i>Login</i></legend>
+  		<form action="" class="form_body form_login">
+  			<input class="form_input" type="email" placeholder="email"><br><br>
+  			<input class="form_input" type="password" placeholder="password"><br>
+  			<button class="btn" type="submit">Signin</button>
+  		</form>
+  	</fieldset>
+  </div>
+
+  <div class="switch">
+  	<div class="switch_text-container" id="switch_text">
+  		<h6 class="switch_header header">Not yet a member ?..</h6>
+  		<p>Signup and Discover what ever you want</p>
+  	</div>
+  	<button class="btn-white btn" id="switch-button">Signup</button>
+  </div>
+  <div class="smooth signup hide-view" id="signup">
+  	<h1 class="signup_header header"><i>Create a new account</i></h1>
+  	<p><i>you can use your social network</i></p>
+  	<div class="social-media_container">
+      <a href=""><i class="fab fa-facebook-square" style="color: #48556D;"></i></a>
+  		<a href=""><i class="fab fa-instagram" style="color: #48556D;"></i></a>
+  		<a href=""><i class="fab fa-twitter" style="color: #48556D;"></i></a>
+  		<a href=""><i class="fab fa-linkedin-in" style="color: #48556D;"></i></a>
+      <a href=""><i class="fab fa-google-plus-square" style="color: #48556D;"></i></a>
+  	</div>
+  	<fieldset class="form">
+  		<legend class="form_legend"><i>OR you ca use it</i></legend>
+  		<form action="" class="form_body form_login">
+  			<input class="form_input" type="username" placeholder="username"><br><br>
+  			<input class="form_input" type="email" placeholder="email"><br><br>
+  			<input class="form_input" type="password" placeholder="password"><br>
+  			<button class="btn" type="submit">Signin</button>
+  		</form>
+  	</fieldset>
+  </div>
+    <a href="home.html" class="btn mt-4">Home</a>
+    <a href="about.html" class="btn mt-4">previous</a>
+  <script type="text/javascript">
+  	const login = document.getElementById('login');
+  	const signup = document.getElementById('signup');
+
+  	const showText = {
+  		login :{
+  			header : 'Not yet a member ?..',
+  			byline : 'Signup and Discover what ever you want',
+  			buttonText:'Sign up'
+  		},
+  		
+  		signup :{
+  			header : 'Already a member?.',
+  			byline : 'Sign in and see what\'s on',
+  			buttonText : 'Signin'
+  		}
+    }
+
+    const switchButton = document.getElementById('switch-button');
+    const switchText = document.getElementById('switch_text');
+    switchButton.addEventListener('click',()=>{
+    	login.classList.toggle('hide-view');
+    	signup.classList.toggle('hide-view');
+    	login.classList.contains('hide-view')?
+    	changeSwitchText('signup'):
+    	changeSwitchText('login')
+    })
+
+    function changeSwitchText(el)
+    {
+    	switchText.childern[0].innerText = showText[el].header;
+    	switchText.childern[1].innerText = showText[el].byline;
+    	switchButton.innerText = showText[el].buttonText;
+    }
+  </script>
+</body>
+</html>

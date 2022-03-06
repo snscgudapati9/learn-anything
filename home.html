@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+	<link rel="stylesheet" type="text/css" href="hstyle.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>  
+<body>
+	
+    <div class="hero">
+   	  <nav>
+   	  	<img src=url("images/logo.png") class="logo">
+   	  	<ul>
+   	  		<li><a href=""><i>HOME</i></a></li>
+          <li><a href=""><i>DISCOVER</i></a></li>
+   	  		<li><a href="about.html"><i>ABOUT US</i></a></li>
+   	  		<li><a href="profile.html"><i>CONTACT</i></a></li>
+   	  		<li><a href="login.html"><i>LOGIN</i></a></li>
+   	  	</ul>
+   	  	<img src=url("images/moon.png") class="icon">
+   	  </nav>
+   	  <div class="info">
+           <h1>I'm <span><i>Gudapati.</span>SNSC</i></h1>
+           <p><i>This is my website to showcase of my web development and UI design.</i></p>
+           <a href="">Subscribe</a>
+   	  </div>
+   	  <div class="socialmedia-links">
+        <a href=""><i class="fab fa-facebook-square"></i></a>
+        <a href=""><i class="fab fa-instagram"></i></a>
+        <a href=""><i class="fab fa-twitter"></i></a>
+        <a href=""><i class="fab fa-linkedin-in"></i></a>
+        <a href=""><i class="fab fa-google-plus-square"></i></a>
+      </div>
+    </div>
+
+ <script>
+ 	var icon = document.getElementById("icon")
+ 	icon.onclick = function()
+ 	{
+ 		document.body.classList.toggle("dark-theme");
+ 		if (document.body.classList.contains("dark-theme")) 
+ 		{
+ 			icon.src =url("images/sun.png");
+ 		}
+ 		else
+ 		{
+ 			icon.src =url("images/moon.png");
+ 		}
+
+ 	}
+ </script>
+</body>
+</html>
